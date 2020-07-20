@@ -1,4 +1,3 @@
-  
 const request = require("supertest");
 
 const server = require("../server");
@@ -10,7 +9,7 @@ describe("/calendars", () => {
 
   afterEach(testUtils.clearDB)
 
-  describe("GET /:id", () => {
+  describe("GET /:calendarId", () => {
     it("should return 404 if no matching id", async () => {
       const res = await request(server).get("/calendars/id1");
       expect(res.statusCode).toEqual(404);
@@ -24,7 +23,7 @@ describe("/calendars", () => {
     });
   });
 
-  describe('GET /:id after multiple POST /', () => {
+  describe('GET /:calendarId after multiple POST /', () => {
     let calendar1, calendar2;
 
     beforeEach(async () => {
@@ -69,7 +68,7 @@ describe("/calendars", () => {
     });
   });
 
-  describe('PUT /:id after POST /', () => {
+  describe('PUT /:calendarId after POST /', () => {
     let calendar1;
 
     beforeEach(async () => {
@@ -90,7 +89,7 @@ describe("/calendars", () => {
     });
   });
 
-  describe('DELETE /:id after POST /', () => {
+  describe('DELETE /:calendarId after POST /', () => {
     let calendar1;
 
     beforeEach(async () => {
