@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const eventRouter = Router({mergeParams: true});
+const eventRouter = Router({ mergeParams: true });
 
 const EventDAO = require('../daos/events');
 

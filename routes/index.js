@@ -2,6 +2,6 @@ const { Router } = require("express");
 const router = Router();
 
 router.use("/calendars", require('./calendars'));
-router.use("/events", require('./events'));
+router.use("/calendars/:calendarId/events", require('./events'));
 
 module.exports = router;
